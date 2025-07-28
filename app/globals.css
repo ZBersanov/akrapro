@@ -5,3 +5,11 @@
   --yellow: #f2c94c;
   --gray: #454545;
 }
+
+.container {
+  @apply w-[1200px] mx-auto;
+}
+
+.nav-link {
+  @apply hover:text-[var(--yellow)] transition-all duration-300 cursor-pointer;
+}

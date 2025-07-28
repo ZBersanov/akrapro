@@ -1,3 +1,9 @@
+import Header from "./_components/Header";
+
 export default function Home() {
-  return <div className="mx-6">Hello world</div>;
+  return (
+    <div>
+      <Header />
+    </div>
+  );
 }
