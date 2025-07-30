@@ -5,7 +5,7 @@ import { FaWhatsapp} from "react-icons/fa";
 const Header = () => {
   return (
     <nav className="fixed top-0 w-full z-50 bg-[var(--background)] text-white py-3 backdrop-blur-md">
-      <div className="container flex items-center justify-between font-bold px-4">
+      <div className="container flex items-center justify-between font-bold">
         <Image src={"/logo.svg"} width={100} height={100} alt="logo" />
         <ul className="flex gap-5">
           <li className="nav-link">Услуги</li>
@@ -17,7 +17,7 @@ const Header = () => {
           <a href="">
             <FaWhatsapp size={30} className="text-white hover:text-[#25D366] transition-colors duration-300" />
           </a>
-          <a href="tel:+79899306655" className="border border-white rounded-[12px] px-6 py-2 inline-block">
+          <a href="tel:+79899306655" className="border border-current rounded-[12px] px-6 py-2 inline-block hover:text-red-500 transition-colors duration-300">
             +7 (989) 930-66-55
           </a>
         </div>

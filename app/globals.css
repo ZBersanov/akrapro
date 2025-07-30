@@ -6,10 +6,18 @@
   --gray: #454545;
 }
 
+body {
+  font-family: var(--font-play), sans-serif;
+}
+
 .container {
   @apply w-[1200px] mx-auto;
 }
 
 .nav-link {
   @apply hover:text-[var(--yellow)] transition-all duration-300 cursor-pointer;
+}
+
+.yellow-button {
+  @apply flex bg-[var(--yellow)] font-bold w-[322px] h-[60px] items-center justify-center transition-all duration-400 hover:bg-black hover:text-white;
 }
