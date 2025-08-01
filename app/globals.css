@@ -1,13 +1,16 @@
 @import "tailwindcss";
+@import "./fonts.css";
 
 :root {
   --background: #1d1d1d;
-  --yellow: #f2c94c;
-  --gray: #454545;
+  --orange: #ff3b11;
+  --white: #fdfdfd;
+  --black: #1a1a1a;
 }
 
 body {
-  font-family: var(--font-play), sans-serif;
+  font-family: var(--font-onest), sans-serif;
+  @apply overflow-x-hidden;
 }
 
 .container {
@@ -15,7 +18,7 @@ body {
 }
 
 .nav-link {
-  @apply hover:text-[var(--yellow)] transition-all duration-300 cursor-pointer;
+  @apply hover:text-[var(--orange)] transition-all duration-300 cursor-pointer;
 }
 
 .yellow-button {

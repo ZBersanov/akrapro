@@ -1,10 +1,11 @@
-import { Play } from "next/font/google";
+import { Onest } from "next/font/google";
 import "./globals.css";
+import Header from "./_components/Header";
 
-const play = Play({
+const onest = Onest({
   subsets: ["latin", "cyrillic"],
-  weight: ["400", "700"],
-  variable: "--font-play",
+  weight: ["400", "600", "700"],
+  variable: "--font-onest",
   display: "swap",
 });
 
@@ -16,7 +17,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="ru">
-      <body className={`${play.variable} antialiased`}>{children}</body>
+      <body className={`${onest.variable} antialiased`}>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }

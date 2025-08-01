@@ -1,12 +1,15 @@
 import Image from "next/image"
+import Link from "next/link";
 import { FaWhatsapp} from "react-icons/fa";
 
 
 const Header = () => {
   return (
-    <nav className="fixed top-0 w-full z-50 bg-[var(--background)] text-white py-3 backdrop-blur-md">
-      <div className="container flex items-center justify-between font-bold">
-        <Image src={"/logo.svg"} width={100} height={100} alt="logo" />
+    <header className="fixed top-0 w-full z-50 bg-[var(--background)] text-white py-3">
+      <nav className="container flex items-center justify-between font-bold">
+        <Link href={"/"}>
+          <Image src={"/logo.svg"} width={100} height={100} alt="logo" />
+        </Link>
         <ul className="flex gap-5">
           <li className="nav-link">Услуги</li>
           <li className="nav-link">Портфолио</li>
@@ -21,8 +24,8 @@ const Header = () => {
             +7 (989) 930-66-55
           </a>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </header>
   )
 }
 
