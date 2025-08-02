@@ -6,6 +6,13 @@
   --orange: #ff3b11;
   --white: #fdfdfd;
   --black: #1a1a1a;
+  --gray: #252525;
+}
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -13,14 +20,27 @@ body {
   @apply overflow-x-hidden;
 }
 
+.font-grandis {
+  font-family: "Grandis Extended", sans-serif;
+}
+
 .container {
-  @apply w-[1200px] mx-auto;
+  @apply w-full max-w-[1200px] px-4 mx-auto;
 }
 
 .nav-link {
   @apply hover:text-[var(--orange)] transition-all duration-300 cursor-pointer;
 }
 
-.yellow-button {
-  @apply flex bg-[var(--yellow)] font-bold w-[322px] h-[60px] items-center justify-center transition-all duration-400 hover:bg-black hover:text-white;
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity 200ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
 }

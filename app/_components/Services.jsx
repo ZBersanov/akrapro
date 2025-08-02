@@ -7,9 +7,9 @@ const Services = () => {
 
 
   return (
-    <section className="bg-[#111111]">
+    <section className="pt-[50px] bg-[var(--black)]" id="services">
       <Title title="Услуги" />
-      <div className="container grid grid-cols-4 gap-9">
+      <div className="container mt-5 grid grid-cols-4 gap-9">
         {serviceData.map((service, i) => (
           <Service service={service} key={i} />
         ))}
