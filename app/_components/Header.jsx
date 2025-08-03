@@ -1,5 +1,6 @@
 "use client"
 
+import { usePathname, useRouter } from "next/navigation"
 import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
@@ -8,13 +9,24 @@ import { FiMenu, FiX } from "react-icons/fi"
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false)
+  const router = useRouter()
+  const pathname = usePathname()
 
   const handleScroll = (e, id) => {
-    e.preventDefault()
-    const element = document.getElementById(id)
-    element?.scrollIntoView({ behavior: "smooth", block: "start" })
-    setMenuOpen(false)
-  }
+      e.preventDefault()
+      setMenuOpen(false)
+
+      // Если мы не на главной — перейти на нее с якорем
+      if (pathname !== "/") {
+        router.push(`/#${id}`)
+      } else {
+        // Если на главной — плавно проскроллить
+        const element = document.getElementById(id)
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "start" })
+        }
+      }
+    }
 
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-[var(--black)] text-[var(--white)] py-4 shadow-md">

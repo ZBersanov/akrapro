@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { LuChevronLeft, LuChevronRight, LuX } from "react-icons/lu";
 import Title from './Title'; 
@@ -27,6 +27,19 @@ export default function Portfolio() {
   const [isOpen, setIsOpen] = useState(false)
   const [currentIndex, setCurrentIndex] = useState(0)
 
+    useEffect(() => {
+    if (!isOpen) return;
+
+    const handleKeyDown = (e) => {
+      if (e.key === 'ArrowRight') nextImage();
+      if (e.key === 'ArrowLeft') prevImage();
+      if (e.key === 'Escape') closeModal();
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen]);
+
   const openModal = (index) => {
     setCurrentIndex(index)
     setIsOpen(true)
@@ -47,15 +60,15 @@ export default function Portfolio() {
   }
 
   return (
-    <section className="py-16 px-4 bg-[var(--black)]" id='portfolio'>
+    <section className="pt-16 pb-8 px-4 bg-[var(--black)]" id='portfolio'>
         <Title title={"Наши работы"} />
         
         {/* Грид-сетка */}
-        <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="mt-5 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {works.map((work, index) => (
             <div 
-              key={work.id} 
-              className="relative aspect-square cursor-pointer hover:opacity-90 transition-opacity"
+              key={work.id}
+              className="relative aspect-[4/3] cursor-pointer hover:opacity-90 transition-opacity"
               onClick={() => openModal(index)}
             >
               <Image
@@ -63,54 +76,56 @@ export default function Portfolio() {
                 alt={work.alt}
                 fill
                 className="object-cover rounded-lg"
-                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 20vw"
+                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
               />
             </div>
           ))}
         </div>
+
 
         {/* Модальное окно с каруселью */}
         {isOpen && (
           <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
             <button 
               onClick={closeModal}
-              className="absolute top-4 right-4 text-white hover:text-red-500 transition-colors cursor-pointer"
+              className="absolute top-4 right-4 text-white hover:text-red-500 transition-colors cursor-pointer z-10"
             >
               <LuX size={32} />
             </button>
 
-            <div className="relative max-w-4xl w-full">
+            <div className="relative w-full max-w-[95vw] max-h-[90vh] flex items-center justify-center">
               <button 
                 onClick={prevImage}
-                className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:text-red-500 transition-colors z-10 cursor-pointer"
+                className="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:text-red-500 transition z-10 cursor-pointer"
               >
                 <LuChevronLeft size={32} />
               </button>
 
-              <div className="aspect-video relative">
+              <div className="relative w-full h-screen max-h-[90vh]">
                 <Image
                   src={works[currentIndex].src}
                   alt={works[currentIndex].alt}
                   fill
-                  className="object-contain"
+                  className="object-scale-down"
                   priority
                 />
               </div>
 
               <button 
                 onClick={nextImage}
-                className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:text-red-500 transition-colors z-10 cursor-pointer"
+                className="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:text-red-500 transition z-10  cursor-pointer"
               >
                 <LuChevronRight size={32} />
               </button>
             </div>
 
             {/* Индикатор текущего фото */}
-            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white">
+            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white text-sm tracking-wide">
               {currentIndex + 1} / {works.length}
             </div>
           </div>
         )}
+
     </section>
   )
 }
