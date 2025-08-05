@@ -1,8 +1,10 @@
-import About from "./_components/About";
-import Contacts from "./_components/Contacts";
-import Hero from "./_components/Hero";
-import Services from "./_components/Services";
-import Portfolio from "./_components/Portfolio";
+import dynamic from "next/dynamic";
+import Hero from "../components/Hero";
+
+// Динамически загружаемые компоненты
+const About = dynamic(() => import("../components/About/About"));
+const Services = dynamic(() => import("../components/Services/Services"));
+const Portfolio = dynamic(() => import("../components/Portfolio/Portfolio"));
 
 export default function Home() {
   return (
@@ -11,7 +13,6 @@ export default function Home() {
       <About />
       <Services />
       <Portfolio />
-      <Contacts />
     </div>
   );
 }

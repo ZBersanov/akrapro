@@ -1,0 +1,17 @@
+export const works = [
+  { id: 1, src: "/portfolio_images/1.jpg", alt: "Работа 1" },
+  { id: 2, src: "/portfolio_images/2.jpg", alt: "Работа 2" },
+  { id: 3, src: "/portfolio_images/3.jpg", alt: "Работа 3" },
+  { id: 4, src: "/portfolio_images/4.jpg", alt: "Работа 4" },
+  { id: 5, src: "/portfolio_images/5.jpg", alt: "Работа 5" },
+  { id: 6, src: "/portfolio_images/6.jpg", alt: "Работа 6" },
+  { id: 7, src: "/portfolio_images/7.jpg", alt: "Работа 7" },
+  { id: 8, src: "/portfolio_images/8.jpg", alt: "Работа 8" },
+  { id: 9, src: "/portfolio_images/9.jpg", alt: "Работа 9" },
+  { id: 10, src: "/portfolio_images/10.jpg", alt: "Работа 10" },
+  { id: 11, src: "/portfolio_images/11.jpg", alt: "Работа 11" },
+  { id: 12, src: "/portfolio_images/12.jpg", alt: "Работа 12" },
+  { id: 13, src: "/portfolio_images/13.jpg", alt: "Работа 13" },
+  { id: 14, src: "/portfolio_images/14.jpg", alt: "Работа 14" },
+  { id: 15, src: "/portfolio_images/15.jpg", alt: "Работа 15" },
+];

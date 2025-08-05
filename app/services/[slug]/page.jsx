@@ -1,7 +1,7 @@
 import { serviceData } from "@/app/_data/service-data";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import Services from "@/app/_components/Services";
+import Services from "@/components/Services/Services";
 import { MdCurrencyRuble } from "react-icons/md";
 
 export async function generateStaticParams() {
@@ -9,6 +9,25 @@ export async function generateStaticParams() {
     slug: service.slug,
   }))
 }
+
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const service = serviceData.find((s) => s.slug === slug);
+
+  if (!service) return {};
+
+  return {
+    title: service.title + " — Akrapro Detailing",
+    description: service.description[0] ?? "", // или составь из нескольких
+    openGraph: {
+      title: service.title,
+      description: service.description[0],
+      type: "article",
+      url: `https://akrapro.ru/services/${slug}`,
+    },
+  };
+}
+
 
 export default async function Page({params}) {
   const {slug} = await params
