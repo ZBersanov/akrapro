@@ -10,7 +10,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }) {
-  const course = courses.find((c) => c.slug === params.slug)
+  const {slug} = await params
+  const course = courses.find((c) => c.slug === slug)
   if (!course) return {}
 
   return {
@@ -23,9 +24,10 @@ export async function generateMetadata({ params }) {
   }
 }
 
-export default function CoursePage({ params }) {
-  const course = courses.find((c) => c.slug === params.slug)
-  const details = courseDetails[params.slug]
+export default async function CoursePage({ params }) {
+  const {slug} = await params
+  const course = courses.find((c) => c.slug === slug)
+  const details = courseDetails[slug]
 
   if (!course || !details) return notFound()
 
