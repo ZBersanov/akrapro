@@ -1,9 +1,10 @@
+import dynamic from "next/dynamic"
 import { DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { formSchema } from "./formSchema"
-import { FormFields } from "./FormFields"
+const FormFields = dynamic(() => import("./FormFields"))
 import { useState } from "react"
 
 export function EnrollDialog({ open, setOpen, defaultCourse }) {

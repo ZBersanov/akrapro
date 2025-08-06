@@ -2,7 +2,7 @@ import { FaWhatsapp } from "react-icons/fa"
 
 const ContactBlock = () => (
   <div className="hidden lg:flex items-center gap-6">
-    <a href="https://wa.me/79899306655" target="_blank" rel="noopener noreferrer">
+    <a href="https://wa.me/79899306665" target="_blank" rel="noopener noreferrer">
       <FaWhatsapp size={28} className="text-white hover:text-[#25D366] transition" />
     </a>
     <a

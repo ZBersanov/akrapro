@@ -10,7 +10,7 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 
-export function FormFields({ form, selectedCourse, setSelectedCourse }) {
+export default function FormFields({ form, selectedCourse, setSelectedCourse }) {
   return (
     <form
       id="course-form"
