@@ -1,10 +1,19 @@
 
-import "./loading.css"; // Подключим неоновый стиль отдельно
+import Image from "next/image";
+import "./loading.css";
+
 
 const Loading = () => {
   return (
     <div className="loading-wrapper">
-      <div className="neon-spinner" />
+      <Image
+        src="/logo.svg"
+        alt="Logo"
+        width={80}
+        height={80}
+        className="loading-logo"
+        priority
+      />
     </div>
   );
 };

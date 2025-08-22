@@ -6,19 +6,16 @@
   background: #0f0f0f;
 }
 
-.neon-spinner {
-  width: 60px;
-  height: 60px;
-  border: 6px solid transparent;
-  border-top: 6px solid var(--orange);
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  box-shadow: 0 0 20px var(--orange), 0 0 40px var(--orange),
-    0 0 60px var(--orange);
+.loading-logo {
+  animation: spinY 2s linear infinite;
+  transform-style: preserve-3d;
 }
 
-@keyframes spin {
+@keyframes spinY {
+  from {
+    transform: rotateY(0deg);
+  }
   to {
-    transform: rotate(360deg);
+    transform: rotateY(360deg);
   }
 }

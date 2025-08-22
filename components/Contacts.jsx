@@ -27,7 +27,7 @@ const Contacts = () => {
         </div>
 
         <div className="flex gap-3 text-[var(--orange)]">
-          <Link href="#"><FaYoutube size={28} /></Link>
+          <Link href="https://youtube.com/@akra_miami?si=qfX2vHT8G0Yx8zci" target="_blank"><FaYoutube size={28} /></Link>
           <Link href="#"><FaVk size={28} /></Link>
           <Link href="#"><FaTelegram size={28} /></Link>
         </div>

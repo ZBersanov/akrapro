@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Stars from "./Stars";
 
+
 const Hero = () => {
   return (
     <section className="relative pt-40 bg-[var(--black)] text-[var(--white)] min-h-screen flex flex-col">

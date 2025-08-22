@@ -1,6 +1,7 @@
 
-import { SchoolVideoCarousel } from "../../components/SchoolVideocarousel"
+import { Suspense } from "react"
 import { SchoolCoursesAccordion } from "../../components/SchoolCoursesAccordion"
+import { SchoolVideoCarousel } from "@/components/SchoolVideocarousel"
 
 export const metadata = {
   title: "Школа Детейлинга | Обучение детейлингу и автоуходу",
@@ -14,7 +15,9 @@ export default function SchoolPage() {
     <section className="pt-30 space-y-12 font-grandis">
       <h2 className="text-3xl font-bold text-center">Направления</h2>
       <SchoolCoursesAccordion />
-      <SchoolVideoCarousel />
+      <Suspense fallback="Загрузка...">
+        <SchoolVideoCarousel />
+      </Suspense>
     </section>
   )
 }

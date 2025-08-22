@@ -9,6 +9,7 @@ import { FaArrowRight } from "react-icons/fa"
 import Link from "next/link"
 
 import { courses } from "../app/_data/courses"
+import { CourseLink } from "./CourseLink"
 
 export function SchoolCoursesAccordion() {
   return (
@@ -27,12 +28,7 @@ export function SchoolCoursesAccordion() {
                 <div><strong>Длительность:</strong> <span className="text-xl">{course.duration} ⌛</span></div>
                 <div><strong>Стоимость:</strong> <span className="text-xl">{course.price} ✅</span></div>
               </div>
-              <Link
-                href={`/directions/${course.slug}`}
-                className="bg-black/10 hover:bg-black/20 transition-colors duration-300 inline-flex items-center gap-1 text-primary font-medium px-3 py-2 rounded-md mt-2"
-              >
-                Подробнее <FaArrowRight className="text-xs mt-0.5" />
-              </Link>
+              <CourseLink slug={course.slug} />  
             </AccordionContent>
           </AccordionItem>
         ))}
