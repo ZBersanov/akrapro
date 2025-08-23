@@ -1,0 +1,57 @@
+// Маппинг услуг к разделам
+export const serviceCategories = {
+  antigravity: [
+    "antigravity-vinyl-films",
+    "headlight-protection",
+    "risk-zone-protection",
+    "full-body-gloss-protection",
+    "vinyl-black-wrapping",
+    "windshield-protection",
+    "why-windshield-protection",
+  ],
+  polishing: [
+    "polishing",
+    "pre-sale-polishing",
+    "detailing-polishing",
+    "headlight-polishing",
+    "protective-coating",
+    "anti-rain",
+    "wheel-ceramic-coating",
+  ],
+  install: ["door-closers", "car-alarm"],
+  // ОБНОВЛЕННЫЕ КАТЕГОРИИ:
+  sound: [
+    "body-soundproofing",
+    "full-capsule-soundproofing",
+    "doors-soundproofing",
+    "wheel-arches-soundproofing",
+    "ceiling-soundproofing",
+  ],
+  painting: [
+    "body-straightening",
+    "full-car-painting",
+    "partial-painting",
+    "powder-coating-wheels",
+    "caliper-painting",
+    "tacnalization",
+    "hydro-dipping",
+  ],
+  carbon: [
+    "carbon-steering-wheel",
+    "carbon-interior",
+    "carbon-body-kit",
+    "leather-restoration",
+  ],
+  interior: [
+    "headliner-upholstery",
+    "steering-wheel-upholstery",
+    "seats-upholstery",
+    "door-cards-upholstery",
+    "interior-dry-cleaning",
+    "starry-sky-ceiling",
+    "starry-sky-doors",
+    "engine-bay-cleaning",
+    "car-preservation",
+  ],
+  carstudio: ["Нет данных"],
+};

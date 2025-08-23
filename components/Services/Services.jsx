@@ -3,28 +3,9 @@ import { useState } from "react"
 import Title from "../Title"
 import ServiceCard from "./ServiceCard"
 import { serviceData } from "@/app/_data/service-data"
+import { categories } from "@/app/_data/categories"
+import { serviceCategories } from "@/app/_data/serviceCategories"
 
-// Категории (ручной список)
-const categories = [
-  { key: "antigravity", label: "Антигравийные пленки" },
-  { key: "polishing", label: "Полировка" },
-  { key: "install", label: "Доп. установка" },
-  { key: "sound", label: "Шумоизоляция" },
-  { key: "painting", label: "Малярка" },
-  { key: "carbon", label: "Карбон" },
-  { key: "interior", label: "Перетяжка салона" },
-]
-
-// Маппинг услуг к разделам
-const serviceCategories = {
-  antigravity: ["antigravity-vinyl-films", "headlight-protection", "risk-zone-protection", "full-body-gloss-protection", "vinyl-black-wrapping", "windshield-protection", "why-windshield-protection"],
-  polishing: ["polishing", "pre-sale-polishing", "detailing-polishing", "headlight-polishing", "protective-coating", "polishing-liquid-glass", "polishing-ceramic-coating", "premium-ceramic-coating"],
-  install: ["door-closers", "car-alarm"],
-  sound: [], // пока пусто
-  painting: [], // пока пусто
-  carbon: [], // пока пусто
-  interior: [], // пока пусто
-}
 
 const Services = () => {
   const [activeCategory, setActiveCategory] = useState(categories[0].key)
@@ -38,13 +19,17 @@ const Services = () => {
       <Title title="Услуги" />
 
       {/* Навигация */}
-      <div className="container flex flex-wrap gap-4 mt-8 border-b border-white/10">
+      <div
+        className="container flex justify-between gap-4 mt-8 border-b border-white/10 
+                  overflow-x-hidden my-scroll pb-3"
+      >
         {categories.map(cat => (
           <button
             key={cat.key}
             onClick={() => setActiveCategory(cat.key)}
             className={`relative pb-3 px-2 text-lg transition-all duration-300 
               ${activeCategory === cat.key ? "text-red-500" : "text-white/70 hover:text-white"}
+              flex-shrink-0
             `}
           >
             {cat.label}
@@ -54,6 +39,7 @@ const Services = () => {
           </button>
         ))}
       </div>
+
 
       {/* Список услуг */}
       <div className="container mt-6 space-y-2">

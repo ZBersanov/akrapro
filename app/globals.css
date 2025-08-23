@@ -75,3 +75,22 @@ body {
 .ReactModal__Overlay--before-close {
   opacity: 0;
 }
+
+.my-scroll {
+  overflow-x: auto;
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: rgba(255, 255, 255, 0.3) transparent; /* Firefox */
+}
+
+.my-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+
+.my-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.my-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}

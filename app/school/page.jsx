@@ -10,6 +10,7 @@ export const metadata = {
 }
 
 
+
 export default function SchoolPage() {
   return (
     <section className="pt-30 space-y-12 font-grandis">
